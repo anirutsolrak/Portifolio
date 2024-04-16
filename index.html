@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfólio de Front-End</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos CSS customizados -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Apenas para telas maiores */
+        @media (min-width: 768px) {
+            /* Card de "Sobre Mim" */
+            .about__card {
+                width: 100%;
+                margin-top: 100px; /* Adiciona margem para baixar o card */
+            }
+
+            /* Título do Card */
+            .display-4 {
+                font-size: 28px; /* Aumenta o tamanho do texto */
+            }
+
+            /* Imagem do Card */
+            .img__about img {
+                max-width: 50%; /* Reduz o tamanho da imagem */
+                margin: 0 auto; /* Centraliza a imagem horizontalmente */
+            }
+
+            /* Estilo para o botão flutuante */
+            #floatingButton {
+                display: block; /* Exibe o botão apenas em telas maiores */
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 9999;
+            }
+
+            /* CSS para o menu de projetos */
+            .menu__container {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 9998;
+                overflow-y: auto;
+                padding: 20px;
+            }
+
+            .menu__container.show {
+                display: block;
+            }
+
+            .menu__container .menu__content {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+            }
+
+            .menu__container .menu__content h2 {
+                margin-bottom: 20px;
+            }
+
+            .menu__container .menu__content .projeto {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-dark">
+    <header class="bg-dark py-5">
+        <div class="container text-center text-white">
+            <h1 class="display-4">"Construindo experiências interativas com código criativo."</h1>
+            <p class="lead">- Carlos Eduardo Turina</p>
+        </div>
+    </header>
+
+    <!-- Capa semelhante à do Facebook -->
+    <div class="cover"></div>
+
+    <!-- Contêiner principal -->
+    <div class="container">
+        <!-- Card de Sobre Mim -->
+        <div class="row">
+            <div class="col-md-6 mx-auto"> <!-- Centraliza o card -->
+                <div class="card about__card">
+                    <!-- Conteúdo do card de Sobre Mim -->
+                    <div class="img__about">
+                        <img src="me.jpg" class="img-fluid" alt="Foto de Perfil">
+                    </div>
+                    <div class="info__text">
+                        <p>Olá! Meu nome é Carlos Eduardo Turina e sou um desenvolvedor Front-End apaixonado por criar experiências incríveis na web. Com habilidades sólidas em HTML, CSS e JavaScript, estou sempre buscando aprender e dominar as últimas tecnologias para fornecer soluções excepcionais para meus clientes.</p>
+                    </div>
+                    <div class="logos">
+                        <!-- Logos das tecnologias -->
+                        <div class="logo-group">
+                            <img src="html5.png" alt="Logo 2" class="html5__png">
+                            <img src="asaas.png" alt="Logo 4">
+                            <img src="n8n.png" class="n8n__png" alt="Logo 5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão flutuante para abrir o menu de projetos -->
+    <button id="floatingButton" class="btn btn-primary">Projetos</button>
+
+    <!-- Menu de Projetos -->
+    <aside class="menu__container">
+        <div class="menu__content">
+            <h2>Meus projetos até aqui</h2>
+            <div class="projeto">
+                <a href="https://jogo-rouge-three.vercel.app">
+                    <img src="thumb_jogo.jpg" class="img-fluid" alt="Projeto 1">
+                    <h3>Jogo do Número Secreto</h3>
+                </a>
+            </div>
+            <div class="projeto">
+                <a href="https://encriptacao.vercel.app/">
+                    <img src="thumb_descript.jpg" class="img-fluid" alt="Projeto 2">
+                    <h3>Descriptação e Encriptação de Texto</h3>
+                </a>
+            </div>
+            <div class="projeto">
+                <a href="https://quiz-rho-dusky-73.vercel.app">
+                    <img src="quiz.gif" class="img-fluid gif" alt="Projeto Quiz">
+                    <h3>Quiz</h3>
+                </a>
+            </div>
+            <!-- Adicione mais projetos conforme necessário -->
+          <button id="closeButton" class="btn btn-primary close-button">Fechar</button>
+        </div>
+    </aside>
+
+    <!-- Bootstrap JS (opcional, dependendo do que você precisa) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Aguarda o DOM ser carregado
+        document.addEventListener('DOMContentLoaded', function() {
+            // Seleciona o botão flutuante
+            const floatingButton = document.getElementById('floatingButton');
+            // Seleciona o menu de projetos
+            const menuContainer = document.querySelector('.menu__container');
+
+            // Adiciona um evento de clique ao botão flutuante
+            floatingButton.addEventListener('click', function() {
+                // Alterna a visibilidade do menu de projetos
+                menuContainer.classList.toggle('show');
+            });
+
+          document.getElementById('closeButton').addEventListener('click', function() {
+    menuContainer.classList.remove('show');
+});
+          
+            // Fecha o menu de projetos se o usuário clicar fora dele
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.menu__container, #floatingButton')) {
+                    menuContainer.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
