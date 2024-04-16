@@ -2,8 +2,29 @@
     font-size: 18px;
 }
 
+h1{
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3{
+  text-align: center;
+}
+
 p {
     text-align: center;
+}
+
+.projeto a:hover {
+    text-decoration: none; /* Remove a estilização de hover */
+}
+
+.projeto a {
+  color: #363636;
+  
 }
 
 .close-button {
@@ -148,23 +169,56 @@ p {
 
 /* Estilo para telas maiores que celular */
 @media (min-width: 768px) {
+  
+  :root {
+    font-size: 1.8em;
+  }
+  
     body {
         background-image: url('fundo.jpg');
         background-size: cover;
     }
   
+  .projeto a {
+  color: #dcdcdc;
+  
+}
+  
+  .img__about {
+    display: flex;
+    max-width: 50%;
+    border-radius: 80%;
+    align-self: center;
+    margin: auto;
+}
+  
     .projeto {
         flex-grow: 1; /* Todos os projetos crescerão igualmente */
     }
+  
+  .projeto:nth-child(1) {
+    order: 1; /* Primeiro projeto */
 }
 
-/* Estilo para a versão de telas maiores */
-.container-lg {
-    display: none;
+.projeto:nth-child(2) {
+    order: 2; /* Segundo projeto */
 }
 
-@media (min-width: 768px) {
+.projeto:nth-child(3) {
+    order: 3; /* Terceiro projeto */
+}
+  
+
     .container-lg {
-        display: block;
+        display: none;
     }
+
+#floatingButton {
+  display: none;
+}
+
+#closeButton {
+  display: none;
+}
+
 }
