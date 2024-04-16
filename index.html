@@ -7,8 +7,6 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Estilos CSS customizados -->
     <link rel="stylesheet" href="styles.css">
-    
-       
 </head>
 <body class="bg-dark">
     <header class="bg-dark py-5">
@@ -25,7 +23,7 @@
     <div class="container">
         <!-- Card de Sobre Mim -->
         <div class="row">
-            <div class="col-md-6 mx-auto"> <!-- Centraliza o card -->
+            <div class="col-md-12 mx-auto"> <!-- Centraliza o card -->
                 <div class="card about__card">
                     <!-- Conteúdo do card de Sobre Mim -->
                     <div class="img__about">
@@ -72,40 +70,78 @@
                     <h3>Quiz</h3>
                 </a>
             </div>
-            <!-- Adicione mais projetos conforme necessário -->
           <button id="closeButton" class="btn btn-primary close-button">Fechar</button>
         </div>
     </aside>
 
-    <!-- Bootstrap JS (opcional, dependendo do que você precisa) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        // Aguarda o DOM ser carregado
-        document.addEventListener('DOMContentLoaded', function() {
-            // Seleciona o botão flutuante
-            const floatingButton = document.getElementById('floatingButton');
-            // Seleciona o menu de projetos
-            const menuContainer = document.querySelector('.menu__container');
+    <!-- Container principal para a versão de telas maiores -->
+<div class="container-lg d-none d-md-block">
+    <!-- Menu de Projetos -->
+    <aside class="menu__container-lg">
+        <div class="menu__content-lg">
+            <h2>Meus projetos até aqui</h2>
+            <div class="row">
+                <!-- Projeto 1 (alinhar à esquerda) -->
+                <div class="col text-left">
+                    <div class="projeto">
+                        <a href="https://jogo-rouge-three.vercel.app">
+                            <img src="thumb_jogo.jpg" class="img-fluid" alt="Projeto 1">
+                            <h3>Jogo do Número Secreto</h3>
+                        </a>
+                    </div>
+                </div>
+                <!-- Projeto 2 (alinhar à direita) -->
+                <div class="col text-right">
+                    <div class="projeto">
+                        <a href="https://encriptacao.vercel.app/">
+                            <img src="thumb_descript.jpg" class="img-fluid" alt="Projeto 2">
+                            <h3>Descriptação e Encriptação de Texto</h3>
+                        </a>
+                    </div>
+                </div>
+                <!-- Projeto 3 (centralizado) -->
+                <div class="col text-center">
+                    <div class="projeto">
+                        <a href="https://quiz-rho-dusky-73.vercel.app">
+                            <img src="quiz.gif" class="img-fluid gif" alt="Projeto Quiz">
+                            <h3>Quiz</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+</div>
 
-            // Adiciona um evento de clique ao botão flutuante
-            floatingButton.addEventListener('click', function() {
-                // Alterna a visibilidade do menu de projetos
-                menuContainer.classList.toggle('show');
-            });
+<!-- Bootstrap JS (opcional, dependendo do que você precisa) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Aguarda o DOM ser carregado
+    document.addEventListener('DOMContentLoaded', function() {
+        // Seleciona o botão flutuante
+        const floatingButton = document.getElementById('floatingButton');
+        // Seleciona o menu de projetos
+        const menuContainer = document.querySelector('.menu__container');
 
-          document.getElementById('closeButton').addEventListener('click', function() {
-    menuContainer.classList.remove('show');
-});
-          
-            // Fecha o menu de projetos se o usuário clicar fora dele
-            document.addEventListener('click', function(event) {
-                if (!event.target.closest('.menu__container, #floatingButton')) {
-                    menuContainer.classList.remove('show');
-                }
-            });
+        // Adiciona um evento de clique ao botão flutuante
+        floatingButton.addEventListener('click', function() {
+            // Alterna a visibilidade do menu de projetos
+            menuContainer.classList.toggle('show');
         });
-    </script>
+
+        document.getElementById('closeButton').addEventListener('click', function() {
+            menuContainer.classList.remove('show');
+        });
+
+        // Fecha o menu de projetos se o usuário clicar fora dele
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.menu__container, #floatingButton')) {
+                menuContainer.classList.remove('show');
+            }
+        });
+    });
+</script>
 </body>
 </html>
