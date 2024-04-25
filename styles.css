@@ -224,7 +224,7 @@ p {
   
   .img__about {
     display: flex;
-    flex-grow: 0.5;
+    flex-grow: 0.1;
     max-width: 50%;
     border-radius: 80%;
     align-self: center;
@@ -232,7 +232,7 @@ p {
 }
   
     .projeto {
-        flex-grow: 0.5; /* Todos os projetos crescerão igualmente */
+        flex-grow: 0.1; /* Todos os projetos crescerão igualmente */
     }
   
   .projeto:nth-child(1) {
