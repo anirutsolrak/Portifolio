@@ -237,8 +237,8 @@ p {
     }
   
   .projeto:nth-child(1) {
-      max-width: 35%;
-      max-hegth: 35%;
+      width: 35%;
+      heigth: 35%;
     order: 1; /* Primeiro projeto */
 }
 
