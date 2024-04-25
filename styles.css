@@ -226,13 +226,14 @@ p {
     display: flex;
     flex-grow: 0.1;
     max-width: 50%;
-    border-radius: 80%;
+      max-heigth: 50%;
+    border-radius: 50%;
     align-self: center;
     margin: auto;
 }
   
     .projeto {
-        flex-grow: 0.1; /* Todos os projetos crescerão igualmente */
+      max-width: 75%;
     }
   
   .projeto:nth-child(1) {
