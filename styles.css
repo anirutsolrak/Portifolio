@@ -1,7 +1,7 @@
 :root {
     font-size: 18px;
 }
-
+}
 h1{
   text-align: center;
   font-size: 1.5rem;
@@ -31,10 +31,10 @@ p {
     z-index: 9999;
     background-color: #363636; /* Cor de fundo igual à cor da página */
     color: #dcdcdc; /* Cor das letras igual à cor do texto */
-    border: none;
+    border: none; /* Remove a borda */
     border-radius: 50%; /* Deixa o botão arredondado */
   
-    font-size: 1.5rem; 
+    font-size: 1.5rem; /* Tamanho da fonte */
 }
 
 .display-4 {
@@ -45,6 +45,7 @@ p {
     align-self: center;
 }
 
+/* Estilos específicos */
 .about__card {
     display: flex;
     color: #dcdcdc;
@@ -109,7 +110,7 @@ p {
     margin-bottom: 20px;
 }
 
-
+/* Estilo para o botão flutuante */
 #floatingButton {
     display: flex;
   justify-content: center;
@@ -155,13 +156,13 @@ p {
     margin-bottom: 20px;
 }
 
-
+/* Estilo para o header */
 .header {
     background-image: url('capa.jpg');
     background-size: cover;
 }
 
-
+/* Estilos específicos para a seção "Sobre Mim" */
 .about__card {
     color: #dcdcdc;
     background-color: #363636;
@@ -196,7 +197,7 @@ p {
     color: #fff;
 }
 
-
+/* Estilo para telas maiores que celular */
 @media (min-width: 768px) {
   
   :root {
@@ -208,13 +209,22 @@ p {
         background-size: cover;
     }
   
+  .menu__container {
+    display: flex.;
+    max-width: 95%;
+    max-height: 95%;
+    background-color: gray;
+    
+  }
+  
   .projeto a {
-  color: #dcdcdc;
+  color: black;
   
 }
   
   .img__about {
     display: flex;
+    flex-grow: 0.5;
     max-width: 50%;
     border-radius: 80%;
     align-self: center;
@@ -222,19 +232,19 @@ p {
 }
   
     .projeto {
-        flex-grow: 1; /* Todos os projetos crescerão igualmente */
+        flex-grow: 0.5; /* Todos os projetos crescerão igualmente */
     }
   
   .projeto:nth-child(1) {
-    order: 1;
+    order: 1; /* Primeiro projeto */
 }
 
 .projeto:nth-child(2) {
-    order: 2;
+    order: 2; /* Segundo projeto */
 }
 
 .projeto:nth-child(3) {
-    order: 3;
+    order: 3; /* Terceiro projeto */
 }
   
   
