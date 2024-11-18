@@ -43,15 +43,21 @@ const ProjectCard = ({ project }) => {
       onMouseEnter={handleMouseEnter} // Adicione o evento onMouseEnter
       onMouseLeave={handleMouseLeave} // Adicione o evento onMouseLeave
     >
-      <CardMedia
-        sx={{
-          height: 100, // Altura fixa. Ajuste conforme necessário
-          backgroundImage: `url(${project.thumbnail})`,
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: isHovered ? 'top -45px' : 'top', // Ajuste o valor -45px para controlar a rolagem
-          transition: 'background-position 0.5s ease-in-out',
-        }}
-      />
+    <CardMedia sx={{ height: 100, overflow: 'hidden', position: 'relative' }}> {/* Adiciona overflow: hidden e position: relative */}
+        <img
+          src={project.thumbnail}
+          alt={project.title}
+          style={{
+            position: 'absolute', // Torna a imagem posicionável
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: 'auto', // Ajusta a altura automaticamente
+            transform: isHovered ? 'translateY(-40%)' : 'translateY(0)', // Controla o deslocamento vertical
+            transition: 'transform 0.8s ease-in-out',
+          }}
+        />
+      </CardMedia>
       <CardContent
         sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: 2 }}
       >

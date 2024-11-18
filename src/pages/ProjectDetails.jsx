@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Box, Container, Typography, Chip, Grid, Button } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { projects } from '../data/projects';
-import ProjectsMenu from '../components/ProjectsMenu';
+import BotaoProjetos from '../componentes/BotaoProjetos';
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -13,6 +13,12 @@ const ProjectDetails = () => {
   if (!project) {
     return <Typography>Projeto não encontrado</Typography>;
   }
+
+  const menuItems = [
+    { label: 'Websites', path: '/perfil/projetos/websites' },
+    { label: 'Aplicações', path: '/perfil/projetos/aplicacoes' },
+    { label: 'Projetos com IA', path: '/perfil/projetos/projetos-com-ia' },
+  ];
 
   const renderContent = (content) => {
     // Check if content contains HTML tags
@@ -48,7 +54,7 @@ const ProjectDetails = () => {
           >
             Voltar
           </Button>
-          <ProjectsMenu />
+          <BotaoProjetos menuItems={menuItems}/>
         </Box>
         
         <Grid container spacing={4}>

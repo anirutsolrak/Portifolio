@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import {
   Box,
   Typography,
@@ -7,40 +7,18 @@ import {
   useTheme,
   useMediaQuery,
   Button,
-  Backdrop,
-  Fade,
   Card,
-  CardContent,
-  Menu,
-  MenuItem,
+  CardContent
 } from '@mui/material';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import ProcessoDeDesenvolvimento from '../../componentes/ProcessoDeDesenvolvimento';
 import Photo from '../../assets/Photo.svg';
-import { useNavigate } from 'react-router-dom';
+
 
 
 
 const Perfil = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const navigate = useNavigate();
-  const [anchorEl, setAnchorEl] = useState(null); // Estado para controlar o menu
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleCloseMenu = () => {
-    setAnchorEl(null);
-  };
-
-  const handleMenuItemClick = (category) => {
-    navigate(`/perfil/projetos/${category}`);
-    handleCloseMenu(); // Fecha o menu após o clique
-  };
-
-
 
   
   const services = [
@@ -60,12 +38,6 @@ const Perfil = () => {
       skills: ['Figma', 'Prototipagem', 'Design System', 'Wireframing']
     }
   ];
-
-  const handleVerProjetosClick = (category) => {
-    navigate(`/perfil/projetos/${category}`);
-    handleModalClose();
-  };
-
 
 
   return (
@@ -173,51 +145,6 @@ const Perfil = () => {
           </Grid>
         </Container>
       </Box>
-
-      {/* Menu para Ver Projetos */}
-      <Button
-        variant="contained"
-        aria-haspopup="true"
-        aria-controls="project-menu"
-        aria-label="Ver Projetos"
-        onClick={handleClick}
-        sx={{
-          position: 'fixed',
-          bottom: 16,
-          right: 16,
-          backgroundColor: '#646CFF',
-          color: '#fff',
-          borderRadius: '30px',
-          zIndex: '30',
-          border: '3px solid white',
-          px: 4,
-          py: 1.5,
-          '&:hover': {
-            backgroundColor: '#4B50FF'
-          }
-        }}
-        startIcon={<KeyboardArrowUpIcon />}
-      >
-        Ver Projetos
-      </Button>
-      <Menu
-        id="project-menu"
-        anchorEl={anchorEl}
-        open={Boolean(anchorEl)}
-        onClose={handleCloseMenu}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        transformOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
-        }}
-      >
-        <MenuItem onClick={() => handleMenuItemClick('websites')}>Websites</MenuItem>
-        <MenuItem onClick={() => handleMenuItemClick('aplicacoes')}>Aplicações</MenuItem>
-        <MenuItem onClick={() => handleMenuItemClick('projetos-com-ia')}>Projetos com IA</MenuItem>
-      </Menu>
 
       {/* Services Section */}
       <Box id="services" sx={{ py: 12, backgroundColor: '#fff' }}>

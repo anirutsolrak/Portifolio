@@ -109,7 +109,7 @@ export const projects = [
     shortDescription:
       'Criar um player de vídeo personalizado com boa experiência do usuário.',
     thumbnail: '/nexusplay.png',
-    liveUrl: 'https://vercel.com/anirutsolraks-projects/nexuplay',
+    liveUrl: 'https://nexuplay.vercel.app/',
     technologies: ['React', 'MUI', 'Video.js'],
     category: 'Aplicações',
     sections: [
@@ -176,7 +176,7 @@ export const projects = [
     shortDescription:
       'Um jogo de adivinhação que demonstra fundamentos de JavaScript.',
     thumbnail: '/numero-secreto.png',
-    liveUrl: 'https://vercel.com/anirutsolraks-projects/numero-secreto-react',
+    liveUrl: 'https://numero-secreto-react.vercel.app/',
     technologies: ['JavaScript', 'CSS'],
     category: 'Aplicações',
     sections: [
