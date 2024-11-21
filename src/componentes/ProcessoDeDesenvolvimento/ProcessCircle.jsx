@@ -27,29 +27,33 @@ const CircleContainer = styled(Box)(({ theme }) => ({
 }));
 
 const ProcessCircle = ({ steps, activeStep, onStepClick }) => {
-  const calculateStepPosition = (angle) => {
-    const radius = 42; // slightly reduced radius
+  const calculateStepPosition = (index) => {  // Changed to accept index
+    const radius = 48;
+    const angle = index * 60; // Calculate angle based on index * 60
     const radians = (angle * Math.PI) / 180;
     const x = Math.cos(radians) * radius;
     const y = Math.sin(radians) * radius;
     return {
       top: `${50 + y}%`,
       left: `${50 + x}%`,
-      transform: 'translate(-50%, -50%)',
+      transform: 'translate(-45%, -50%)',
     };
   };
 
-  const calculateDescriptionPosition = (angle) => {
-    const radius = 55; // adjusted radius for descriptions
-    const radians = (angle * Math.PI) / 180;
-    const x = Math.cos(radians) * radius;
-    const y = Math.sin(radians) * radius;
-    return {
-      top: `${50 + y}%`,
-      left: `${50 + x}%`,
-      transform: 'translate(-50%, -50%)',
+  /*   Removido a mensagem dos steps circulares 
+    const calculateDescriptionPosition = (index) => { // Changed to accept index
+        const radius = 55; 
+        const angle = index * 60; // Calculate angle based on index * 60
+        const radians = (angle * Math.PI) / 180;
+        const x = Math.cos(radians) * radius;
+        const y = Math.sin(radians) * radius;
+        return {
+            top: `${50 + y}%`,
+            left: `${50 + x}%`,
+            transform: 'translate(-50%, -50%)',
+        };
     };
-  };
+*/
 
   return (
     <CircleContainer>
@@ -60,8 +64,8 @@ const ProcessCircle = ({ steps, activeStep, onStepClick }) => {
           index={index}
           isActive={activeStep === index}
           onClick={onStepClick}
-          position={calculateStepPosition(step.angle)}
-          descriptionPosition={calculateDescriptionPosition(step.angle)}
+          position={calculateStepPosition(index)} // Pass index
+         // descriptionPosition={calculateDescriptionPosition(index)} // Pass index
         />
       ))}
     </CircleContainer>

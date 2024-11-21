@@ -6,7 +6,7 @@ const ArticlesList = () => {
   return (
     <Grid container spacing={3}>
       {articles.map((article) => (
-        <Grid item xs={12} md={6} key={article.id}>
+        <Grid xs={12} md={6} key={article.id}>
           <Card 
             sx={{ 
               height: '100%',
