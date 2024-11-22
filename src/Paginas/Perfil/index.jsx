@@ -1,26 +1,22 @@
-import React  from 'react';
+import React from 'react';
 import {
   Box,
   Typography,
-  Grid,
+  Grid2,
   Container,
   useTheme,
   useMediaQuery,
-  Button,
   Card,
-  CardContent
+  CardContent,
 } from '@mui/material';
 import ProcessoDeDesenvolvimento from '../../componentes/ProcessoDeDesenvolvimento';
-import Photo from '../../assets/Photo.svg';
-
-
+import DesignProcessBanner from '../../componentes/ProcessoDeDesenvolvimento/DesignProcessBanner';
 
 
 const Perfil = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-  
   const services = [
     {
       title: 'Desenvolvimento Front-end',
@@ -39,132 +35,33 @@ const Perfil = () => {
     }
   ];
 
-
   return (
     <Box sx={{ bgcolor: 'background.default' }}>
       {/* Hero Section with Diagonal Background */}
-      <Box
-        sx={{
-          position: 'relative',
-          minHeight: '100vh',
-          overflow: 'hidden',
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundColor: '#153547',
-            clipPath: 'polygon(0 0, 100% 0, 0 100%)',
-            zIndex: 0,
-          },
-          '&::after': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundColor: '#646CFF',
-            clipPath: 'polygon(0 100%, 100% 0, 100% 100%)',
-            zIndex: 1,
-          }
-        }}
-      >
-        <Container sx={{ position: 'relative', zIndex: 2, py: 8 }}>
-          <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={6}>
-              <Box sx={{ position: 'relative' }}>
-                <img
-                  src={Photo}
-                  alt="Carlos Eduardo Turina"
-                  style={{
-                    width: '100%',
-                    maxWidth: '400px',
-                    borderRadius: '50%',
-                    marginBottom: '2rem',
-                  }}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Typography
-                variant="h1"
-                sx={{
-                  color: '#fff',
-                  fontSize: isMobile ? '2.5rem' : '3.5rem',
-                  fontWeight: 700,
-                  mb: 2
-                }}
-              >
-                Carlos Eduardo Turina
-              </Typography>
-              <Typography
-                variant="h2"
-                sx={{
-                  color: 'black',
-                  fontSize: isMobile ? '1.8rem' : '3.5rem',
-                  mb: 3
-                }}
-              >
-                Desenvolvedor Front-End
-              </Typography>
-              <Typography
-                variant="h5"
-                sx={{
-                  color: '#fff',
-                  mb: 4,
-                  maxWidth: '600px'
-                }}
-              >
-                Especialista em criar experiências web inovadoras com React e IA
-              </Typography>
-              <Button
-                variant="contained"
-                size="large"
-                sx={{
-                  backgroundColor: '#646CFF',
-                  color: '#fff',
-                  borderRadius: '30px',
-                  border: '3px solid white',
-                  px: 4,
-                  py: 1.5,
-                  '&:hover': {
-                    backgroundColor: '#4B50FF'
-                  }
-                }}
-                onClick={() => {
-                  const element = document.getElementById('services');
-                  element?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                Ver Serviços
-              </Button>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
+      <DesignProcessBanner></DesignProcessBanner>
 
       {/* Services Section */}
-      <Box id="services" sx={{ py: 12, backgroundColor: '#fff' }}>
-        <Container>
+      <Box id="services" sx={{ py: 8, backgroundColor: '#fff' }}> {/* Ajuste na distância entre os containers */}
+        <Container maxWidth="md" sx={{ mb: 4 }}> {/* Ajuste na distância entre os containers */}
           <Typography 
             variant="h3" 
             align="center" 
             sx={{ 
-              mb: 6,
+              mb: 4,
               color: '#153547',
               fontWeight: 600
             }}
           >
             Serviços
           </Typography>
-          <Grid container spacing={4}>
+        </Container>
+        <Container maxWidth="lg">
+          <Grid2 container spacing={3}> {/* Ajuste no espaçamento entre os cards */}
             {services.map((service, index) => (
-              <Grid item xs={12} md={4} key={index}>
+              <Grid2  xs={12} md={4} key={index}>
                 <Card 
                   sx={{ 
+                    maxWidth: 360, // Aumento na largura dos cards
                     height: '100%',
                     borderRadius: '20px',
                     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
@@ -216,19 +113,19 @@ const Perfil = () => {
                     </Box>
                   </CardContent>
                 </Card>
-              </Grid>
+              </Grid2>
             ))}
-          </Grid>
+          </Grid2>
         </Container>
       </Box>
 
       {/* Process Section */}
-      <Box sx={{ py: 12, backgroundColor: '#f8f9fa' }}>
+      <Box sx={{ py: 8, backgroundColor: '#f8f9fa' }}> {/* Ajuste na distância entre os containers */}
         <ProcessoDeDesenvolvimento />
       </Box>
 
       {/* About Section */}
-      <Box sx={{ py: 12, backgroundColor: '#fff' }}>
+      <Box sx={{ py: 8, backgroundColor: '#fff' }}> {/* Ajuste na distância entre os containers */}
         <Container>
           <Typography 
             variant="h3" 
@@ -241,8 +138,8 @@ const Perfil = () => {
           >
             Sobre Mim
           </Typography>
-          <Grid container spacing={4} justifyContent="center">
-            <Grid item xs={12} md={8}>
+          <Grid2 container spacing={4} justifyContent="center">
+            <Grid2  xs={12} md={8}>
               <Typography 
                 variant="body1" 
                 paragraph
@@ -252,7 +149,7 @@ const Perfil = () => {
                   lineHeight: 1.8
                 }}
               >
-                Desde 2023, tenho me dedicado ao desenvolvimento web, construindo uma carreira sólida e focada em entregar soluções inovadoras. Comecei minha jornada com JavaScript puro e CSS, e ao longo tempo, aprimorei minhas habilidades em JavaScript, React e Ferramentas de IAs.
+                Desde 2023, tenho me dedicado ao desenvolvimento web, construindo uma carreira sólida e focada em entregar soluções inovadoras. Comecei minha jornada com JavaScript puro e CSS, e ao longo do tempo, aprimorei minhas habilidades em JavaScript, React e Ferramentas de IAs.
               </Typography>
               <Typography 
                 variant="body1"
@@ -264,8 +161,8 @@ const Perfil = () => {
               >
                 Sou apaixonado por Inteligência Artificial e suas aplicações no desenvolvimento web. Acredito que a IA tem um potencial enorme para revolucionar a forma como criamos e interagimos com as soluções digitais.
               </Typography>
-            </Grid>
-          </Grid>
+            </Grid2>
+          </Grid2>
         </Container>
       </Box>
     </Box>
