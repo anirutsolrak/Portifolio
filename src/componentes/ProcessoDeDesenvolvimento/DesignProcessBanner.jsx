@@ -18,7 +18,7 @@ const DesignProcessBanner = () => {
             left: 0,
             width: '100%',
             height: '80vh',
-            backgroundColor: '#153547',
+            backgroundColor: 'rgba(21, 53, 71, 0.9)',
             clipPath: 'polygon(0 0, 100% 0, 0 100%)',
             zIndex: 0,
           },
@@ -29,7 +29,7 @@ const DesignProcessBanner = () => {
             left: 0,
             width: '100%',
             height: '80vh',
-            backgroundColor: '#646CFF',
+            backgroundColor: 'rgba(100, 108, 200)',
             clipPath: 'polygon(0 100%, 100% 0, 100% 100%)',
             zIndex: 1,
           }
@@ -45,7 +45,7 @@ const DesignProcessBanner = () => {
           height: '100%', 
           py: 8 
         }}>
-          <Grid2 container spacing={4} alignItems="center" justifyContent="center">
+          <Grid2 container spacing={4} alignItems="center" justifyContent="center" >
             <Grid2 xs={12} md={6}>
               <Box sx={{ position: 'relative', textAlign: 'center' }}>
                 <img
@@ -67,8 +67,7 @@ const DesignProcessBanner = () => {
                 sx={{
                   color: '#fff',
                   fontSize: '3rem',
-                  fontWeight: 700,
-                  mb: 2,
+                  fontWeight: 'bold',
                   textAlign: 'center',
                 }}
               >
@@ -79,38 +78,54 @@ const DesignProcessBanner = () => {
                 sx={{
                   color: '#fff',
                   fontSize: '2rem',
-                  mb: 3,
                   textAlign: 'center',
+                  
+                  
                 }}
               >
                 Desenvolvedor Front-End
               </Typography>
+              <Typography variant='subtitle1'  sx={{
+                  color: 'white',
+                  textAlign: 'center',
+                  mb: '2rem',
+                  
+                }}
+              >Criando experiências digitais que transformam negócios.</Typography>
               <Typography
                 variant="h5"
                 sx={{
+                  color: '#fff',
+                  maxWidth: '600px',
+                  textAlign: 'center',
+                }}
+              >
+                Especialista em criar soluções web inovadoras com React e IA,
+              </Typography>
+              <Typography variant='h5'  sx={{
                   color: '#fff',
                   mb: 4,
                   maxWidth: '600px',
                   textAlign: 'center',
                 }}
-              >
-                Especialista em criar experiências web inovadoras com React e IA
-              </Typography>
-              <Button
+              > que impulsionam o crescimento do seu negócio.</Typography>
+            
+            </Grid2>
+            <Button
                 variant="contained"
                 size="large"
                 sx={{
-                  backgroundColor: '#646CFF',
+                  backgroundColor: 'rgba(21, 53, 71)',
                   color: '#fff',
                   borderRadius: '30px',
-                  border: '3px solid #646CFF ', // Cor da borda alterada para preto sólido
                   boxShadow: '0px 4px 10px rgba(0, 0, 0, 1)', // Adiciona uma sombra para destacar o botão
                   px: 4,
                   py: 1.5,
-                  mt: 6,
+
+                  mt: 5,
                   '&:hover': {
                     backgroundColor: '#4B50FF',
-                    border: '3px solid black', // Mantém a borda preta no hover
+                    
                   }
                 }}
                 onClick={() => {
@@ -118,9 +133,7 @@ const DesignProcessBanner = () => {
                   element?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Ver Serviços
-              </Button>
-            </Grid2>
+Solicitar Orçamento              </Button>
           </Grid2>
         </Container>
       </Box>

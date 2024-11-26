@@ -1,9 +1,24 @@
 import { Box, Container, Typography, Grid } from '@mui/material';
+import FormularioContato from '../components/Formulario';
 
 const About = () => {
+
+  const handleFormSuccess = () => {
+    // Lógica de sucesso ao enviar o formulário
+    console.log('Formulário enviado com sucesso!');
+  };
+
+  const handleFormError = (error) => {
+    // Lógica de erro ao enviar o formulário
+    console.error('Erro ao enviar formulário:', error);
+  };
+
   return (
     <Box sx={{ py: 8 }}>
       <Container>
+      <FormularioContato
+                onSuccess={handleFormSuccess}
+                onError={handleFormError}/>
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={12} md={8}>
             <Typography variant="h3" component="h1" gutterBottom align="center">

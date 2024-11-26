@@ -16,11 +16,7 @@ const StepButton = styled(Box)(({ theme }) => ({
   zIndex: 20,
   transform: 'translate(-50%, -50%)',
   fontSize: '0.63rem', // Reduzido o tamanho da fonte
-  '&:hover': {
-    transform: 'translate(-50%, -50%) scale(1.1) !important',
-    background: theme.palette.primary.dark,
-    boxShadow: theme.shadows[4],
-  },
+
 }));
 
 const StepDescription = styled(Box)(({ theme }) => ({

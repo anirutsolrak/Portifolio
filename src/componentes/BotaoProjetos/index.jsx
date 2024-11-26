@@ -28,7 +28,7 @@ const BotaoProjetos = ({ menuItems, buttonText = 'Ver Projetos', buttonStyle, me
     position: 'fixed',
     bottom: 16,
     right: 16,
-    backgroundColor: '#646CFF',
+    backgroundColor: 'rgba(21, 53, 71)',
     color: '#fff',
     borderRadius: '30px',
     zIndex: 30,
