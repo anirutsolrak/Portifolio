@@ -109,9 +109,7 @@ const DesignProcessBanner = () => {
                   textAlign: 'center',
                 }}
               > que impulsionam o crescimento do seu negócio.</Typography>
-            
-            </Grid2>
-            <Button
+                     <Button
                 variant="contained"
                 size="large"
                 sx={{
@@ -134,6 +132,8 @@ const DesignProcessBanner = () => {
                 }}
               >
 Solicitar Orçamento              </Button>
+            
+            </Grid2>
           </Grid2>
         </Container>
       </Box>

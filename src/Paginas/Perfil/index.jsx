@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Box,
   Typography,
@@ -12,37 +13,42 @@ import {
 import ProcessoDeDesenvolvimento from '../../componentes/ProcessoDeDesenvolvimento';
 import DesignProcessBanner from '../../componentes/ProcessoDeDesenvolvimento/DesignProcessBanner';
 
-
 const Perfil = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const navigate = useNavigate();
 
   const services = [
     {
       title: 'Desenvolvimento Front-end',
       description: 'Criação de interfaces modernas e responsivas com React, focando em performance e experiência do usuário.',
-      skills: ['React', 'JavaScript', 'TypeScript', 'CSS', 'Material-UI']
+      skills: ['React', 'JavaScript', 'TypeScript', 'CSS', 'Material-UI'],
+      path: '/perfil/orcamento/frontend'
     },
     {
       title: 'Integração com IA',
       description: 'Desenvolvimento de soluções web inteligentes utilizando APIs de IA para criar experiências personalizadas.',
-      skills: ['OpenAI API', 'NLP', 'Automação', 'Integração API']
+      skills: ['OpenAI API', 'NLP', 'Automação', 'Integração API'],
+      path: '/perfil/orcamento/ia'
     },
     {
       title: 'UI/UX Design',
       description: 'Design de interfaces intuitivas e atraentes, com foco na experiência do usuário e conversão.',
-      skills: ['Figma', 'Prototipagem', 'Design System', 'Wireframing']
+      skills: ['Figma', 'Prototipagem', 'Design System', 'Wireframing'],
+      path: '/perfil/orcamento/uiux'
     }
   ];
 
+  const handleServiceClick = (path) => {
+    navigate(path);
+  };
+
   return (
     <Box sx={{ bgcolor: 'background.default' }}>
-      {/* Hero Section with Diagonal Background */}
-      <DesignProcessBanner></DesignProcessBanner>
+      <DesignProcessBanner />
 
-      {/* Services Section */}
-      <Box id="services" sx={{ py: 8, backgroundColor: '#fff' }}> {/* Ajuste na distância entre os containers */}
-        <Container maxWidth="md" sx={{ mb: 4 }}> {/* Ajuste na distância entre os containers */}
+      <Box id="services" sx={{ py: 8, backgroundColor: '#fff' }}>
+        <Container maxWidth="md" sx={{ mb: 4 }}>
           <Typography 
             variant="h3" 
             align="center" 
@@ -56,21 +62,23 @@ const Perfil = () => {
           </Typography>
         </Container>
         <Container maxWidth="lg">
-          <Grid2 container spacing={3}> {/* Ajuste no espaçamento entre os cards */}
+          <Grid2 container spacing={3}>
             {services.map((service, index) => (
-              <Grid2  xs={12} md={4} key={index}>
+              <Grid2 xs={12} md={4} key={index}>
                 <Card 
                   sx={{ 
-                    maxWidth: 360, // Aumento na largura dos cards
+                    maxWidth: 360,
                     height: '100%',
                     borderRadius: '20px',
                     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
                     transition: 'all 0.3s ease-in-out',
+                    cursor: 'pointer',
                     '&:hover': {
                       transform: 'translateY(-10px)',
                       boxShadow: '0 8px 30px rgba(0, 0, 0, 0.15)'
                     }
                   }}
+                  onClick={() => handleServiceClick(service.path)}
                 >
                   <CardContent sx={{ p: 4 }}>
                     <Typography 
@@ -119,13 +127,11 @@ const Perfil = () => {
         </Container>
       </Box>
 
-      {/* Process Section */}
-      <Box sx={{ py: 8, backgroundColor: '#f8f9fa' }}> {/* Ajuste na distância entre os containers */}
+      <Box sx={{ py: 8, backgroundColor: '#f8f9fa' }}>
         <ProcessoDeDesenvolvimento />
       </Box>
 
-      {/* About Section */}
-      <Box sx={{ py: 8, backgroundColor: '#fff' }}> {/* Ajuste na distância entre os containers */}
+      <Box sx={{ py: 8, backgroundColor: '#fff' }}>
         <Container>
           <Typography 
             variant="h3" 
@@ -139,7 +145,7 @@ const Perfil = () => {
             Sobre Mim
           </Typography>
           <Grid2 container spacing={4} justifyContent="center">
-            <Grid2  xs={12} md={8}>
+            <Grid2 xs={12} md={8}>
               <Typography 
                 variant="body1" 
                 paragraph
