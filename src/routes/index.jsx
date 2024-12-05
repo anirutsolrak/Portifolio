@@ -1,16 +1,16 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
-import Layout from '../componentes/Layout';
-import DetalhesProjeto from '../paginas/DetalhesProjeto';
-import Artigos from '../paginas/Artigos';
-import Sobre from '../paginas/Sobre';
-import Introducao from '../paginas/Introducao';
-import Perfil from '../paginas/Perfil';
-import AplicacoesProjetos from '../paginas/AplicacoesProjetos';
-import AIProjetos from '../paginas/AIProjetos';
-import WebsitesProjetos from '../paginas/WebsitesProjetos';
-import OrcamentoFrontend from '../paginas/Orcamentos/OrcamentoFrontend';
-import OrcamentoIA from '../paginas/Orcamentos/OrcamentoIA';
-import OrcamentoUIUX from '../paginas/Orcamentos/OrcamentoUIUX';
+import Layout from '../components/Layout';
+import Home from '../pages/Home';
+import ProjectDetails from '../pages/ProjectDetails';
+import Articles from '../pages/Articles';
+import About from '../pages/About';
+import Introducao from '../Paginas/Introducao';
+import AplicacoesProjetos from '../pages/AplicacoesProjetos';
+import AIProjetos from '../pages/AIProjetos';
+import WebsitesProjetos from '../pages/WebsitesProjetos';
+import OrcamentoFrontend from '../Paginas/Orcamentos/OrcamentoFrontend';
+import OrcamentoIA from '../Paginas/Orcamentos/OrcamentoIA';
+import OrcamentoUIUX from '../Paginas/Orcamentos/OrcamentoUIUX';
 
 export const router = createBrowserRouter([
   {
@@ -22,15 +22,15 @@ export const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: 'projetos/websites',
+        path: 'projetos/websites', 
         element: <WebsitesProjetos />,
       },
       {
-        path: 'projetos/aplicacoes',
+        path: 'projetos/aplicacoes', 
         element: <AplicacoesProjetos />,
       },
       {
-        path: 'projetos/projetos-com-ia',
+        path: 'projetos/projetos-com-ia', 
         element: <AIProjetos />,
       },
       {
@@ -47,19 +47,19 @@ export const router = createBrowserRouter([
       },
       {
         index: true,
-        element: <Perfil />,
+        element: <Home />,
       },
       {
         path: 'project/:id',
-        element: <DetalhesProjeto />,
+        element: <ProjectDetails />,
       },
       {
         path: 'articles',
-        element: <Artigos />,
+        element: <Articles />,
       },
       {
         path: 'about',
-        element: <Sobre />,
+        element: <About />,
       },
     ],
   },

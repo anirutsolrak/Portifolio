@@ -5,6 +5,8 @@ import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useNavigate } from 'react-router-dom';
 
+
+
 const BotaoProjetos = ({ menuItems, buttonText = 'Ver Projetos', buttonStyle, menuPosition }) => {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
@@ -18,7 +20,7 @@ const BotaoProjetos = ({ menuItems, buttonText = 'Ver Projetos', buttonStyle, me
   };
 
   const handleMenuItemClick = (path) => {
-    navigate(path);
+    navigate(path);  // navega para o path diretamente
     handleClose();
   };
 
@@ -41,17 +43,18 @@ const BotaoProjetos = ({ menuItems, buttonText = 'Ver Projetos', buttonStyle, me
   const mergedButtonStyle = { ...defaultButtonStyle, ...buttonStyle };
 
   const defaultMenuPosition = {
-    anchorOrigin: {
-      vertical: 'top',
-      horizontal: 'right',
-    },
-    transformOrigin: {
-      vertical: 'bottom',
-      horizontal: 'right',
-    }
-  };
+      anchorOrigin: {
+        vertical: 'top',
+        horizontal: 'right',
+      },
+      transformOrigin:{
+        vertical: 'bottom',
+        horizontal: 'right',
+      }
+  }
 
   const mergedMenuPosition = { ...defaultMenuPosition, ...menuPosition };
+
 
   return (
     <>
@@ -71,7 +74,7 @@ const BotaoProjetos = ({ menuItems, buttonText = 'Ver Projetos', buttonStyle, me
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleClose}
-        {...mergedMenuPosition}
+        {...mergedMenuPosition} // espalha as propriedades de posição aqui
       >
         {menuItems.map((item) => (
           <MenuItem key={item.path} onClick={() => handleMenuItemClick(item.path)}>
@@ -84,3 +87,10 @@ const BotaoProjetos = ({ menuItems, buttonText = 'Ver Projetos', buttonStyle, me
 };
 
 export default BotaoProjetos;
+
+
+
+
+
+
+
